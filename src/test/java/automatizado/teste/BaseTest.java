@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public abstract class BaseTest {
      
     protected static WebDriver driver; //webdriver inicia o navegador para o teste
-    private static final String URL_BASE = "https://www.google.com/" ; //private final torna constante imutavel
+    private static final String URL_BASE = "file:///C:/Users/manue/OneDrive/%C3%81rea%20de%20Trabalho/testes%20automatizados/CURSO%20UDEMY/sistema/login.html" ; //private final torna constante imutavel
     private static final String CAMINHO_DRIVER = "C:/Program Files/chromedriver-win64/chromedriver.exe" ; //crtl+D seleciona todos os iten iguais na linha
 
     @BeforeClass //estou dizendo que essa classe vai ser chamada antes de qualquer metodo de teste

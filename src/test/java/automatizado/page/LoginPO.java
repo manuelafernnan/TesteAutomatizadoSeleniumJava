@@ -30,4 +30,12 @@ public class LoginPO extends BasePO {
         //TODO Auto-generated constructor stub
     }
     
+    /**
+     * Metodo que retorna mensagem de erro
+     * @return Retorna a mensagem de erro
+     */
+    public String obterMensagemDeErro(){
+        return mensagemErro.getText();
+    }
+  
 }
