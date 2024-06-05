@@ -1,5 +1,6 @@
 package automatizado.page;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +31,11 @@ public class LoginPO extends BasePO {
         //TODO Auto-generated constructor stub
     }
     
+    public void escrever(WebElement input, String texto){
+        input.clear(); //limpar campo antes de digitar
+        input.sendKeys(texto + Keys.TAB);
+    }
+
     /**
      * Metodo que retorna mensagem de erro
      * @return Retorna a mensagem de erro
@@ -37,5 +43,21 @@ public class LoginPO extends BasePO {
     public String obterMensagemDeErro(){
         return mensagemErro.getText();
     }
+    
+    /**
+     * Metodo para realizar a ação de fazer login sem precisar repetir bloco de codigo
+     * @param email
+     * @param senha
+     */
+    public void executarAcaoDeLogar(String email, String senha){
+        escrever(inputEmail, email);
+        escrever(inputSenha, senha);
+        buttonEntrar.click();
+    }
+    
+    public String obterTituloPagina(){
+        return driver.getTitle();
+    }
+
   
 }
