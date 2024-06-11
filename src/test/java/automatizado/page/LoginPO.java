@@ -30,11 +30,6 @@ public class LoginPO extends BasePO {
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    
-    public void escrever(WebElement input, String texto){
-        input.clear(); //limpar campo antes de digitar
-        input.sendKeys(texto + Keys.TAB);
-    }
 
     /**
      * Metodo que retorna mensagem de erro
@@ -53,10 +48,6 @@ public class LoginPO extends BasePO {
         escrever(inputEmail, email);
         escrever(inputSenha, senha);
         buttonEntrar.click();
-    }
-    
-    public String obterTituloPagina(){
-        return driver.getTitle();
     }
 
   

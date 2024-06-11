@@ -19,3 +19,33 @@ Passo a passo para criação de testes automatizados.
        2.4.6 Não deve logar no sistema com campo email incorreto e campo senha preenchido corretamente.   -OK
        2.4.5 Deve logar no sistema com campo email e senha preenchidos corretamente.  -OK 
         
+
+// CASO DE TESTE EM GHERKIN/BDD
+#language: pt
+
+Funcionalidade: Fazer login na página de Controle de Produtos e realizar um cadastro de um produto.
+    Logo é necessário já ter um cadastro na página,
+    preencher os campos de login,
+    clicar no botão Entrar,
+    clicar em Adicionar
+    preencher os campos de cadastro,
+    clicar em Salvar
+
+Cenário 01 - Realizar o Login
+    Dado que seja acessado a página inicial no endereço "..."
+    E preencho o usuário 'admin@admin.com' no campo email
+    E preencho a senha 'admin@123' no campo senha
+    Então clico no botão entrar
+
+Cenário 02 - Cadastrar o produto
+    Dado que seja acessada a tela inicial após o Login
+    E clico no botão Adicionar para abertura da tela de cadastro
+    E preencho os código "0001" no campo código
+    E preencho o nome "Produto Padrão" no campo nome
+    E preencho a quantidade "1" no campo quantidade
+    E preencho o valor "1.00" no campo valor
+    E preencho a data "01/01/2024" no campo data
+    E clico no botão Salvar
+    Então verifico se o produto foi salvo na tabela
+
+
